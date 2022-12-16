@@ -3,8 +3,8 @@ export default {
   target: 'static',
 
   publicRuntimeConfig: {
-    baseApiUrl: process.env.BASE_API_URL || 'http://203.175.11.201:4000',
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    baseApiUrl: process.env.BASE_API_URL || 'https://cpi.dedeard.my.id',
+    baseUrl: process.env.BASE_URL || 'https://rek-masker.netlify.app',
   },
 
   head: {
@@ -41,7 +41,7 @@ export default {
   ],
 
   axios: {
-    baseURL: process.env.BASE_API_URL || 'http://203.175.11.201:4000',
+    baseURL: process.env.BASE_API_URL || 'https://cpi.dedeard.my.id',
   },
 
   build: {},
