@@ -73,15 +73,16 @@ export default {
   name: 'DefaultLayout',
   methods: {
     async logout() {
-      const res = await this.$dialog.confirm({
-        text: 'Anda yakin ingin keluar dari akun anda?',
-        title: 'Warning!',
-        actions: {
-          false: 'Batal',
-          true: 'Log Out',
-        },
+      const { isConfirmed } = await this.$swal({
+        title: 'Anda yakin ingin keluar dari akun anda?',
+        icon: 'question',
+        cancelButtonColor: '#007bff',
+        confirmButtonColor: '#dc3545',
+        cancelButtonText: 'Batal',
+        showCancelButton: true,
+        confirmButtonText: 'Ya, Keluar',
       })
-      if (!res) return true
+      if (!isConfirmed) return true
       this.$store.commit('removeToken')
       window.location.reload()
     },
