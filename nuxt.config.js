@@ -8,7 +8,7 @@ export default {
   },
 
   head: {
-    title: 'frontend',
+    title: 'Rekomendasi Masker',
     htmlAttrs: {
       lang: 'en',
     },
