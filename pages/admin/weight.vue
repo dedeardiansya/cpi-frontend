@@ -1,6 +1,6 @@
 <template>
   <div class="p-3">
-    <div class="card">
+    <div class="card shadow-sm">
       <div class="card-header d-flex">
         <div class="my-auto">Data Bobot Kepentingan</div>
       </div>
@@ -10,7 +10,7 @@
           { key: 'target', label: 'Target' },
           { key: 'value', label: 'Bobot' },
           { key: 'tren', label: 'Tren' },
-          { key: 'action', label: 'Aksi', class: 'text-center width-140' },
+          { key: 'action', label: 'Aksi', class: 'text-center width-80' },
         ]"
         :items="weight"
       >

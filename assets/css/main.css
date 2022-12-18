@@ -17,3 +17,11 @@
 .width-170 {
   width: 170px !important;
 }
+
+.width-210 {
+  width: 210px !important;
+}
+
+.font-weight-bold a.nav-link {
+  font-weight: 600 !important;
+}

@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-light">
+  <main class="bg-secondary">
     <header class="d-flex position-fixed w-100 bg-white shadow-sm px-3">
       <div class="d-flex w-100 my-auto">
         <nuxt-link to="/" class="d-flex text-dark text-decoration-none">
@@ -8,11 +8,7 @@
           </div>
         </nuxt-link>
         <div class="ml-auto">
-          <b-button
-            size="sm"
-            variant="danger"
-            class="font-weight-bold"
-            @click="logout"
+          <b-button variant="danger" class="font-weight-bold" @click="logout"
             >LOG OUT</b-button
           >
         </div>
@@ -21,8 +17,8 @@
     <aside class="bg-white shadow-sm position-fixed">
       <div class="w-full aside-wrapper py-3">
         <div class="px-3 text-center">
-          <div class="p-3 border rounded bg-light">
-            <div class="font-weight-bold lead text-capitalize">
+          <div class="p-3 border rounded bg-secondary">
+            <div class="font-weight-bold lead mt-0 text-capitalize">
               {{ $store.state.user.name }}
             </div>
             <div class="text-muted small">{{ $store.state.user.email }}</div>
@@ -33,31 +29,31 @@
             <b-nav-item
               to="/admin/dashboard"
               exact-active-class="active"
-              class="font-weight-bold"
+              class="font-weight-bold pr-0"
               >Dashboard</b-nav-item
             >
             <b-nav-item
               to="/admin/consumers"
               active-class="active"
-              class="font-weight-bold"
+              class="font-weight-bold pr-0"
               >Data Konsumen</b-nav-item
             >
             <b-nav-item
               to="/admin/masks"
               active-class="active"
-              class="font-weight-bold"
+              class="font-weight-bold pr-0"
               >Data Masker</b-nav-item
             >
             <b-nav-item
               to="/admin/weight"
               active-class="active"
-              class="font-weight-bold"
+              class="font-weight-bold pr-0"
               >Data Bobot</b-nav-item
             >
             <b-nav-item
               to="/admin/cpi-rangking"
               active-class="active"
-              class="font-weight-bold"
+              class="font-weight-bold pr-0"
               >Peringkat CPI</b-nav-item
             >
           </b-nav>

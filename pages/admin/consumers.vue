@@ -1,6 +1,6 @@
 <template>
   <div class="p-3">
-    <div class="card">
+    <div class="card shadow-sm">
       <div class="card-header d-flex">
         <modal-create-consumer
           class="my-auto mr-auto"
@@ -15,7 +15,7 @@
           { key: 'name', label: 'Nama' },
           { key: 'email', label: 'Email' },
           { key: 'phone', label: 'Phone' },
-          { key: 'action', label: 'Aksi', class: 'text-center width-140' },
+          { key: 'action', label: 'Aksi', class: 'text-center width-150' },
         ]"
         :items="consumers"
       >

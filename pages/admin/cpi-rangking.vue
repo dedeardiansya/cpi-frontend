@@ -1,6 +1,6 @@
 <template>
   <div class="p-3">
-    <div class="card">
+    <div class="card shadow-sm">
       <div class="card-header d-flex">
         <modal-create-cpi-rangking
           class="my-auto mr-auto"
@@ -18,15 +18,22 @@
           { key: 'price', label: 'Harga' },
           { key: 'condition', label: 'Kondisi Kulit' },
           { key: 'benefit', label: 'Manfaat' },
-          { key: 'action', label: 'Aksi', class: 'text-center width-140' },
+          { key: 'action', label: 'Aksi', class: 'text-center width-210' },
         ]"
         :items="indexes"
       >
         <template #cell(action)="{ item }">
+          <b-button
+            variant="primary"
+            size="sm"
+            class="mr-0"
+            :to="`/?search=${item.consumer.id}`"
+            >Show</b-button
+          >
           <modal-edit-cpi-rangking
             class="d-inline-block"
             :index="item"
-            :consumers="consumers"
+            :consumers="consumers.filter((el) => el.id === item.consumer.id)"
             @onUpdated="onCpiUpdated"
           />
           <b-button

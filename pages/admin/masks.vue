@@ -1,6 +1,6 @@
 <template>
   <div class="p-3">
-    <div class="card">
+    <div class="card shadow-sm">
       <div class="card-header d-flex">
         <modal-create-mask class="my-auto mr-auto" @onCreated="onMaskCreated" />
         <div class="my-auto">Data Masker</div>
@@ -13,7 +13,7 @@
           { key: 'price', label: 'Harga' },
           { key: 'condition', label: 'Kondisi Kulit' },
           { key: 'benefit', label: 'Manfaat' },
-          { key: 'action', label: 'Aksi', class: 'text-center width-140' },
+          { key: 'action', label: 'Aksi', class: 'text-center width-150' },
         ]"
         :items="masks"
       >

@@ -2,14 +2,14 @@
   <div class="p-3">
     <b-row>
       <b-col md="6">
-        <div class="card card-body text-center">
-          <h3>{{ masks.length }}</h3>
+        <div class="card card-body text-center shadow-sm">
+          <h3 class="display-3">{{ masks.length }}</h3>
           <p>TOTAL MASKER</p>
         </div>
       </b-col>
       <b-col md="6">
-        <div class="card card-body text-center">
-          <h3>{{ consumers.length }}</h3>
+        <div class="card card-body text-center shadow-sm">
+          <h3 class="display-3">{{ consumers.length }}</h3>
           <p>TOTAL KONSUMEN</p>
         </div>
       </b-col>

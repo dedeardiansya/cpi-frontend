@@ -21,7 +21,16 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  css: ['@/assets/css/main.css', 'sweetalert2/dist/sweetalert2.min.css'],
+  loading: {
+    color: '#5e72e4',
+    height: '3px',
+  },
+
+  css: [
+    '@/assets/css/main.css',
+    '@/assets/css/argon-design-system.css',
+    'sweetalert2/dist/sweetalert2.min.css',
+  ],
 
   plugins: [
     { src: '~/plugins/errorResponse.js', ssr: true },
@@ -39,6 +48,11 @@ export default {
     'nuxt-client-init-module',
     'nuxt-route-meta',
   ],
+
+  bootstrapVue: {
+    bootstrapCSS: false, // Or `css: false`
+    bootstrapVueCSS: true, // Or `bvCSS: false`
+  },
 
   axios: {
     baseURL: process.env.BASE_API_URL || 'https://cpi.dedeard.my.id',
