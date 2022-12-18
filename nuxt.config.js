@@ -52,6 +52,7 @@ export default {
   bootstrapVue: {
     bootstrapCSS: false, // Or `css: false`
     bootstrapVueCSS: true, // Or `bvCSS: false`
+    icons: false,
   },
 
   axios: {
