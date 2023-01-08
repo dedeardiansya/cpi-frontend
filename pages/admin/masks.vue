@@ -7,8 +7,9 @@
       </div>
       <b-table
         striped
+        bordered
         :fields="[
-          { key: 'name', label: 'Nama' },
+          { key: 'name', label: 'Nama Kriteria' },
           { key: 'age', label: 'Umur' },
           { key: 'price', label: 'Harga' },
           { key: 'condition', label: 'Kondisi Kulit' },
@@ -17,6 +18,13 @@
         ]"
         :items="masks"
       >
+        <template #thead-top="data">
+          <b-tr>
+            <b-th></b-th>
+            <b-th colspan="4">Bobot masing-masing kriteria</b-th>
+            <b-th></b-th>
+          </b-tr>
+        </template>
         <template #cell(action)="{ item }">
           <modal-edit-mask
             class="d-inline-block"

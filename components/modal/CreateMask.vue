@@ -1,25 +1,25 @@
 <template>
   <div>
     <b-button v-b-modal.modal-create-mask variant="primary" size="sm"
-      >Tambah Masker</b-button
+      >Tambah Data</b-button
     >
     <b-modal
       id="modal-create-mask"
-      title="Buat Masker"
+      title="Form Tambah Data Kriteria"
       size="lg"
       no-close-on-backdrop
     >
       <div>
         <b-alert variant="danger" :show="!!danger">{{ danger }}</b-alert>
         <b-form-group
-          label="Nama:"
+          label="Nama kriteria:"
           label-for="name"
           :invalid-feedback="errors?.name"
         >
           <b-form-input
             id="name"
             v-model="form.name"
-            placeholder="Nama"
+            placeholder="Nama kriteria"
             :state="errors?.name ? false : null"
           />
         </b-form-group>

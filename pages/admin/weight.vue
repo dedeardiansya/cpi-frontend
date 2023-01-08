@@ -7,7 +7,7 @@
       <b-table
         striped
         :fields="[
-          { key: 'target', label: 'Target' },
+          { key: 'target', label: 'Nama kriteria' },
           { key: 'value', label: 'Bobot' },
           { key: 'tren', label: 'Tren' },
           { key: 'action', label: 'Aksi', class: 'text-center width-80' },
