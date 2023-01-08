@@ -18,7 +18,14 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://demos.creative-tim.com/argon-design-system/assets/css/argon-design-system.min.css?v=1.2.2',
+      },
+    ],
   },
 
   loading: {
@@ -26,11 +33,7 @@ export default {
     height: '3px',
   },
 
-  css: [
-    '@/assets/css/main.css',
-    '@/assets/css/argon-design-system.css',
-    'sweetalert2/dist/sweetalert2.min.css',
-  ],
+  css: ['@/assets/css/main.css', 'sweetalert2/dist/sweetalert2.min.css'],
 
   plugins: [
     { src: '~/plugins/errorResponse.js', ssr: true },
