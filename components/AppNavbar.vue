@@ -6,7 +6,7 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item class="font-weight-bold" to="/rangking"
-            >Hasil Perangkingan</b-nav-item
+            >Hasil Perankingan</b-nav-item
           >
           <b-nav-item
             v-if="$store.state.user"
