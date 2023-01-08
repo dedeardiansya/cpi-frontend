@@ -29,32 +29,32 @@
             <b-nav-item
               to="/admin/dashboard"
               exact-active-class="active"
-              class="font-weight-bold pr-0"
+              class="font-weight-bold pr-0 sidebar-nav-list"
               >Dashboard</b-nav-item
             >
             <b-nav-item
               to="/admin/consumers"
               active-class="active"
-              class="font-weight-bold pr-0"
+              class="font-weight-bold pr-0 sidebar-nav-list"
               >Data Konsumen</b-nav-item
             >
-            <b-nav-item
-              to="/admin/masks"
-              active-class="active"
-              class="font-weight-bold pr-0"
-              >Data Masker</b-nav-item
+            <b-nav-item-dropdown
+              id="master-data-dropdown"
+              text="Master Data"
+              toggle-class="font-weight-bold sidebar-dropdown-toggle"
+              class="pr-0 d-block sidebar-dropdown"
+              menu-class="sidebar-dropdown-menu"
             >
-            <b-nav-item
-              to="/admin/weight"
-              active-class="active"
-              class="font-weight-bold pr-0"
-              >Data Bobot</b-nav-item
-            >
+              <b-dropdown-item to="/admin/masks">Data kriteria</b-dropdown-item>
+              <b-dropdown-item to="/admin/weight"
+                >Data Bobot Kepentingan</b-dropdown-item
+              >
+            </b-nav-item-dropdown>
             <b-nav-item
               to="/admin/cpi-rangking"
               active-class="active"
-              class="font-weight-bold pr-0"
-              >Peringkat CPI</b-nav-item
+              class="font-weight-bold pr-0 sidebar-nav-list"
+              >Perankingan CPI</b-nav-item
             >
           </b-nav>
         </div>
@@ -109,5 +109,23 @@ aside {
 .aside-wrapper {
   height: calc(100vh - 60px);
   overflow-y: scroll;
+}
+.sidebar-dropdown {
+  z-index: initial !important;
+}
+.sidebar-nav-list {
+  position: relative;
+}
+</style>
+<style>
+.sidebar-dropdown-menu {
+  position: relative !important;
+  transform: none !important;
+  width: 100%;
+}
+.sidebar-dropdown-toggle::after {
+  position: absolute;
+  top: 20px;
+  right: 10px;
 }
 </style>

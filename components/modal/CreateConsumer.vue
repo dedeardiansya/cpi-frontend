@@ -5,7 +5,7 @@
     >
     <b-modal
       id="modal-create-consumer"
-      title="Buat consumer"
+      title="Form Tambah Data Konsumen"
       size="lg"
       no-close-on-backdrop
     >

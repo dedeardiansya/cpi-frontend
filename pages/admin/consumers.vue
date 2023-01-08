@@ -11,7 +11,7 @@
       <b-table
         striped
         :fields="[
-          { key: 'id', label: 'ID' },
+          { key: 'index', label: 'NO' },
           { key: 'name', label: 'Nama' },
           { key: 'email', label: 'Email' },
           { key: 'phone', label: 'Phone' },
@@ -19,6 +19,9 @@
         ]"
         :items="consumers"
       >
+        <template #cell(index)="{ index }">
+          <span>{{ index + 1 }}</span>
+        </template>
         <template #cell(action)="{ item }">
           <modal-edit-consumer
             class="d-inline-block"
