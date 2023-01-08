@@ -1,14 +1,11 @@
 <template>
   <div>
-    <b-button
-      @click="$bvModal.show('modal-edit-weight-' + weight.id)"
-      variant="primary"
-      size="sm"
-      >Edit</b-button
+    <b-button v-b-modal.modal-create-weight variant="primary" size="sm"
+      >Tambah Data</b-button
     >
     <b-modal
-      :id="'modal-edit-weight-' + weight.id"
-      title="Edit Bobot Kepentingan"
+      id="modal-create-weight"
+      title="Form Tambah Data Bobot Kepentingan"
       size="lg"
       no-close-on-backdrop
     >
@@ -19,11 +16,17 @@
           label-for="target"
           :invalid-feedback="errors?.target"
         >
-          <b-form-input
+          <b-select
             id="target"
-            :value="targetValue(form.target)"
-            disabled
+            v-model="form.target"
             placeholder="Target"
+            :options="[
+              { value: '', text: 'Target' },
+              { value: 'age', text: 'Bobot 1' },
+              { value: 'price', text: 'Bobot 2' },
+              { value: 'condition', text: 'Bobot 3' },
+              { value: 'benefit', text: 'Bobot 4' },
+            ]"
             :state="errors?.target ? false : null"
           />
         </b-form-group>
@@ -68,7 +71,7 @@
 
 <script>
 export default {
-  name: 'ModalEditWeight',
+  name: 'ModalCreateWeight',
   props: {
     weight: {
       type: Object,
@@ -87,43 +90,21 @@ export default {
       },
     }
   },
-  mounted() {
-    this.form.target = this.weight.target || ''
-    this.form.value = this.weight.value || 0
-    this.form.tren = this.weight.tren || false
-  },
   methods: {
-    targetValue(value) {
-      switch (value) {
-        case 'age':
-          return 'Bobot 1'
-        case 'price':
-          return 'Bobot 2'
-        case 'condition':
-          return 'Bobot 3'
-        case 'benefit':
-          return 'Bobot 4'
-        default:
-          return ''
-      }
-    },
     async submit() {
       this.loading = true
       this.errors = null
       try {
         console.log(this.form)
-        const weight = await this.$axios.$put(
-          '/weight/' + this.weight.id,
-          this.form
-        )
-        this.$emit('onUpdated', weight)
-        this.$bvModal.hide('modal-edit-weight-' + weight.id)
+        const weight = await this.$axios.$post('/weight/', this.form)
+        this.$emit('onCreated', weight)
+        this.$bvModal.hide('modal-create-weight')
         this.form = {
           target: weight.target,
           value: weight.value,
           tren: weight.tren,
         }
-        this.$bvToast.toast(`Berhasil memperbarui bobot kepentingan.`, {
+        this.$bvToast.toast(`Berhasil membuat bobot kepentingan.`, {
           variant: 'success',
           title: 'Sukses',
         })

@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-button v-b-modal.modal-create-cpi variant="primary" size="sm"
-      >Tambah Rangking CPI</b-button
+      >Tambah Data</b-button
     >
     <b-modal
       id="modal-create-cpi"

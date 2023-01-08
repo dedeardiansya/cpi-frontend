@@ -15,19 +15,19 @@
       <div>
         <b-alert variant="danger" :show="!!danger">{{ danger }}</b-alert>
         <b-form-group
-          label="Nama:"
+          label="Nama Kriteria:"
           label-for="name"
           :invalid-feedback="errors?.name"
         >
           <b-form-input
             id="name"
             v-model="form.name"
-            placeholder="Nama"
+            placeholder="Nama Kriteria"
             :state="errors?.name ? false : null"
           />
         </b-form-group>
         <b-form-group
-          label="Bobot Umur:"
+          label="Bobot 1:"
           label-for="age"
           :invalid-feedback="errors?.age"
         >
@@ -35,12 +35,12 @@
             id="age"
             type="number"
             v-model="form.age"
-            placeholder="Bobot Umur"
+            placeholder="Bobot 1"
             :state="errors?.age ? false : null"
           />
         </b-form-group>
         <b-form-group
-          label="Bobot Harga:"
+          label="Bobot 2:"
           label-for="price"
           :invalid-feedback="errors?.price"
         >
@@ -48,12 +48,12 @@
             id="price"
             type="number"
             v-model="form.price"
-            placeholder="Bobot Harga"
+            placeholder="Bobot 2"
             :state="errors?.price ? false : null"
           />
         </b-form-group>
         <b-form-group
-          label="Bobot Kondisi Kulit:"
+          label="Bobot 3:"
           label-for="condition"
           :invalid-feedback="errors?.condition"
         >
@@ -61,12 +61,12 @@
             id="condition"
             type="number"
             v-model="form.condition"
-            placeholder="Bobot Kondisi Kulit"
+            placeholder="Bobot 3"
             :state="errors?.condition ? false : null"
           />
         </b-form-group>
         <b-form-group
-          label="Bobot Manfaat:"
+          label="Bobot 4:"
           label-for="benefit"
           :invalid-feedback="errors?.benefit"
         >
@@ -74,7 +74,7 @@
             id="benefit"
             type="number"
             v-model="form.benefit"
-            placeholder="Bobot Manfaat"
+            placeholder="Bobot 4"
             :state="errors?.benefit ? false : null"
           />
         </b-form-group>

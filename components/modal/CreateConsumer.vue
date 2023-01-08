@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-button v-b-modal.modal-create-consumer variant="primary" size="sm"
-      >Tambah Konsumen</b-button
+      >Tambah Data</b-button
     >
     <b-modal
       id="modal-create-consumer"
