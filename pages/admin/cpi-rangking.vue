@@ -27,7 +27,7 @@
             variant="primary"
             size="sm"
             class="mr-0"
-            :to="`/?search=${item.consumer.id}`"
+            :to="`/rangking?search=${item.consumer.id}`"
             >Show</b-button
           >
           <modal-edit-cpi-rangking
