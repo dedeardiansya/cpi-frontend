@@ -9,10 +9,10 @@
         striped
         :fields="[
           { key: 'name', label: 'Nama Masker' },
-          { key: 'age', label: 'Bobot 1' },
-          { key: 'price', label: 'Bobot 2' },
-          { key: 'condition', label: 'Bobot 3' },
-          { key: 'benefit', label: 'Bobot 4' },
+          { key: 'age', label: 'Umur' },
+          { key: 'price', label: 'Harga' },
+          { key: 'condition', label: 'Kondisi Kulit' },
+          { key: 'benefit', label: 'Manfaat' },
           { key: 'action', label: 'Aksi', class: 'text-center width-150' },
         ]"
         :items="masks"
