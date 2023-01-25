@@ -10,18 +10,21 @@
         <div class="my-auto">Peringkat CPI</div>
       </div>
       <b-table
+        bordered
         striped
         :fields="[
-          { key: 'consumer.id', label: 'UID' },
-          { key: 'consumer.name', label: 'Nama' },
-          { key: 'age', label: 'Umur' },
-          { key: 'price', label: 'Harga' },
-          { key: 'condition', label: 'Kondisi Kulit' },
-          { key: 'benefit', label: 'Manfaat' },
+          { key: 'no', label: 'No' },
+          { key: 'consumer.id', label: 'Id konsumen' },
+          { key: 'consumer.name', label: 'Nama Konsumen' },
+          { key: 'cpi.cpi', label: 'Hasil CPI Tertinggi' },
+          { key: 'cpi.name', label: 'Nama Masker Wajah' },
           { key: 'action', label: 'Aksi', class: 'text-center width-210' },
         ]"
         :items="indexes"
       >
+        <template #cell(no)="{ index }">
+          <span>{{ index + 1 }}</span>
+        </template>
         <template #cell(action)="{ item }">
           <b-button
             variant="primary"
