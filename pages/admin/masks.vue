@@ -8,7 +8,7 @@
       <b-table
         striped
         :fields="[
-          { key: 'name', label: 'Nama Kriteria' },
+          { key: 'name', label: 'Nama Masker' },
           { key: 'age', label: 'Bobot 1' },
           { key: 'price', label: 'Bobot 2' },
           { key: 'condition', label: 'Bobot 3' },

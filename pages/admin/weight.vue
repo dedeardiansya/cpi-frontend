@@ -2,10 +2,10 @@
   <div class="p-3">
     <div class="card shadow-sm">
       <div class="card-header d-flex">
-        <modal-create-weight
+        <!-- <modal-create-weight
           class="my-auto mr-auto"
           @onCreated="onWeightCreated"
-        />
+        /> -->
         <div class="my-auto">Data Bobot Kepentingan</div>
       </div>
       <b-table
@@ -14,14 +14,14 @@
           { key: 'target', label: 'Nama kriteria' },
           { key: 'value', label: 'Bobot' },
           { key: 'tren', label: 'Tren' },
-          { key: 'action', label: 'Aksi', class: 'text-center width-150' },
+          // { key: 'action', label: 'Aksi', class: 'text-center width-150' },
         ]"
         :items="weight"
       >
         <template #cell(target)="{ item }">
           <span>{{ targetValue(item.target) }}</span>
         </template>
-        <template #cell(action)="{ item }">
+        <!-- <template #cell(action)="{ item }">
           <modal-edit-weight
             class="d-inline-block"
             :weight="item"
@@ -33,7 +33,7 @@
             @click.prevent="deleteWeight(item.id)"
             >Hapus</b-button
           >
-        </template>
+        </template> -->
       </b-table>
     </div>
   </div>
@@ -58,13 +58,13 @@ export default {
     targetValue(value) {
       switch (value) {
         case 'age':
-          return 'Bobot 1'
+          return 'Umur'
         case 'price':
-          return 'Bobot 2'
+          return 'Harga'
         case 'condition':
-          return 'Bobot 3'
+          return 'Kondisi Kulit'
         case 'benefit':
-          return 'Bobot 4'
+          return 'Manfaat'
         default:
           return ''
       }

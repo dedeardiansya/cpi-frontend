@@ -45,7 +45,8 @@
               class="pr-0 d-block sidebar-dropdown"
               menu-class="sidebar-dropdown-menu"
             >
-              <b-dropdown-item to="/admin/masks">Data kriteria</b-dropdown-item>
+              <b-dropdown-item to="/admin/masks">Data Masker</b-dropdown-item>
+              <b-dropdown-item to="/admin/criteria">Data Kriteria</b-dropdown-item>
               <b-dropdown-item to="/admin/weight"
                 >Data Bobot Kepentingan</b-dropdown-item
               >
