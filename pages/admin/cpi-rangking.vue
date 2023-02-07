@@ -5,7 +5,7 @@
         <modal-create-cpi-rangking
           class="my-auto mr-auto"
           :consumers="consumers"
-          @onCreated="onCpiCreated"
+          @onCreated="refresh"
         />
         <div class="my-auto">Peringkat CPI</div>
       </div>
@@ -18,7 +18,7 @@
           { key: 'consumer.name', label: 'Nama Konsumen' },
           { key: 'cpi.cpi', label: 'Hasil CPI Tertinggi' },
           { key: 'cpi.name', label: 'Nama Masker Wajah' },
-          { key: 'action', label: 'Aksi', class: 'text-center width-210' },
+          { key: 'action', label: 'Aksi', class: 'text-center width-150' },
         ]"
         :items="indexes"
       >
@@ -26,18 +26,16 @@
           <span>{{ index + 1 }}</span>
         </template>
         <template #cell(action)="{ item }">
-          <b-button
-            variant="primary"
-            size="sm"
-            class="mr-0"
-            :to="`/rangking?search=${item.consumer.id}`"
-            >Show</b-button
-          >
+          <modal-show-rangking
+            v-if="item.cpi"
+            class="d-inline-block"
+            :cid="item.consumer.id"
+          />
           <modal-edit-cpi-rangking
             class="d-inline-block"
             :index="item"
             :consumers="consumers.filter((el) => el.id === item.consumer.id)"
-            @onUpdated="onCpiUpdated"
+            @onUpdated="refresh"
           />
           <b-button
             variant="danger"
@@ -81,17 +79,8 @@ export default {
         this.$sw('Gagal menghapus data', this.$errorMessage(e))
       }
     },
-    onCpiCreated(i) {
-      const exists = this.indexes.find((el) => el.id === i.id)
-      if (exists) {
-        this.onCpiUpdated(i)
-      } else {
-        this.indexes = [...this.indexes, i]
-      }
-    },
-    onCpiUpdated(i) {
-      const indexes = [...this.indexes]
-      this.indexes = indexes.map((el) => (el.id === i.id ? i : el))
+    async refresh() {
+      this.indexes = await this.$axios.$get('/indexes')
     },
   },
 }

@@ -19,4 +19,16 @@ export default function (ctx, inject) {
       return 4
     }
   })
+  inject('getBenefit', (condition) => {
+    switch (condition) {
+      case 'iritasi':
+        return 'meredakan kulit wajah iritasi'
+      case 'kemerahan':
+        return 'menormalkan kadar minyak wajah'
+      case 'kering':
+        return 'menghidrasi kulit wajah kering'
+      case 'kencang dan gatal':
+        return 'melembabkan kukit kencang dan gatal'
+    }
+  })
 }

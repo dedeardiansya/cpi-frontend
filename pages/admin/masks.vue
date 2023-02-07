@@ -5,7 +5,49 @@
         <modal-create-mask class="my-auto mr-auto" @onCreated="onMaskCreated" />
         <div class="my-auto">Data Masker</div>
       </div>
+      <table class="table table-bordered">
+        <tr>
+          <th class="width-210">Gambar masker</th>
+          <th>Keterangan</th>
+          <th class="text-center width-150">Aksi</th>
+        </tr>
+        <tr v-for="mask in masks" :key="mask.id">
+          <td>
+            <img
+              v-if="mask.image"
+              :src="$config.baseApiUrl + '/uploads/' + mask.image"
+              width="200px"
+            />
+            <img
+              v-else
+              src="https://via.placeholder.com/200x100/f0f0f0/000000?text=Gambar masker"
+              width="200px"
+            />
+          </td>
+          <td>
+            <span class="d-block"> Nama masker: {{ mask.name }} </span>
+            <span class="d-block">
+              Manfaat masker: {{ $getBenefit(mask.condition) }}
+            </span>
+            <span class="d-block"> Harga masker: Rp.{{ mask.price }} </span>
+          </td>
+          <td>
+            <modal-edit-mask
+              class="d-inline-block"
+              :mask="mask"
+              @onUpdated="onMaskUpdated"
+            />
+            <b-button
+              variant="danger"
+              size="sm"
+              @click.prevent="deleteMask(mask.id)"
+              >Hapus</b-button
+            >
+          </td>
+        </tr>
+      </table>
       <b-table
+        v-if="false"
         striped
         :fields="[
           { key: 'name', label: 'Nama Masker' },

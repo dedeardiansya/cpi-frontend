@@ -70,6 +70,18 @@
             :state="errors?.condition ? false : null"
           />
         </b-form-group>
+        <b-form-group label="Gambar masker:" label-for="image">
+          <b-form-file
+            id="image"
+            v-model="form.image"
+            :state="errors?.image ? false : null"
+            placeholder="Choose a file or drop it here..."
+            drop-placeholder="Drop file here..."
+          />
+          <span class="invalid-feedback d-block" v-if="errors?.image">{{
+            errors?.image
+          }}</span>
+        </b-form-group>
       </div>
       <template #modal-footer="{ cancel }">
         <b-button variant="primary" :disabled="loading" @click="submit()"
@@ -82,6 +94,7 @@
 </template>
 
 <script>
+import FormData from 'form-data'
 export default {
   name: 'ModalEditMask',
   props: {
@@ -100,6 +113,7 @@ export default {
         age: 0,
         price: 0,
         condition: '',
+        image: null,
       },
     }
   },
@@ -108,13 +122,20 @@ export default {
     this.form.age = this.mask.age || 0
     this.form.price = this.mask.price || 0
     this.form.condition = this.mask.condition || ''
+    this.form.image = this.mask.image || null
   },
   methods: {
     async submit() {
       this.loading = true
       this.errors = null
       try {
-        const mask = await this.$axios.$put('/masks/' + this.mask.id, this.form)
+        const data = new FormData()
+        data.append('name', this.form.name)
+        data.append('age', this.form.age)
+        data.append('price', this.form.price)
+        data.append('condition', this.form.condition)
+        data.append('image', this.form.image)
+        const mask = await this.$axios.$put('/masks/' + this.mask.id, data)
         this.$emit('onUpdated', mask)
         this.$bvModal.hide('modal-edit-mask-' + mask.id)
         this.form = {
@@ -122,6 +143,7 @@ export default {
           age: mask.age,
           price: mask.price,
           condition: mask.condition,
+          image: mask.image,
         }
         this.$bvToast.toast(`Berhasil memperbarui masker.`, {
           variant: 'success',

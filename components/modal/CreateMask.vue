@@ -67,6 +67,18 @@
             :state="errors?.condition ? false : null"
           />
         </b-form-group>
+        <b-form-group label="Gambar masker:" label-for="image">
+          <b-form-file
+            id="image"
+            v-model="form.image"
+            :state="errors?.image ? false : null"
+            placeholder="Choose a file or drop it here..."
+            drop-placeholder="Drop file here..."
+          />
+          <span class="invalid-feedback d-block" v-if="errors?.image">{{
+            errors?.image
+          }}</span>
+        </b-form-group>
       </div>
       <template #modal-footer="{ cancel }">
         <b-button variant="primary" :disabled="loading" @click="submit()"
@@ -79,6 +91,7 @@
 </template>
 
 <script>
+import FormData from 'form-data'
 export default {
   name: 'ModalCreateMask',
   data() {
@@ -91,6 +104,7 @@ export default {
         age: 0,
         price: 0,
         condition: '',
+        image: null,
       },
     }
   },
@@ -99,7 +113,13 @@ export default {
       this.loading = true
       this.errors = null
       try {
-        const mask = await this.$axios.$post('/masks', this.form)
+        const data = new FormData()
+        data.append('name', this.form.name)
+        data.append('age', this.form.age)
+        data.append('price', this.form.price)
+        data.append('condition', this.form.condition)
+        data.append('image', this.form.image)
+        const mask = await this.$axios.$post('/masks', data)
         this.$emit('onCreated', mask)
         this.$bvModal.hide('modal-create-mask')
         this.form = {
@@ -107,6 +127,7 @@ export default {
           age: 0,
           price: 0,
           condition: '',
+          image: null,
         }
         this.$bvToast.toast(`Berhasil membuat masker baru.`, {
           variant: 'success',

@@ -94,7 +94,6 @@ export default {
       this.loading = true
       this.errors = null
       try {
-        console.log(this.form)
         const weight = await this.$axios.$post('/weight/', this.form)
         this.$emit('onCreated', weight)
         this.$bvModal.hide('modal-create-weight')
