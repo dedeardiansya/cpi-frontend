@@ -54,25 +54,17 @@
           label-for="condition"
           :invalid-feedback="errors?.condition"
         >
-          <b-form-input
+          <b-select
             id="condition"
-            type="number"
             v-model="form.condition"
-            placeholder="Kondisi Kulit"
+            :options="[
+              { value: '', text: 'Kondisi kulit', disabled: true },
+              'iritasi',
+              'kemerahan',
+              'kering',
+              'kencang dan gatal',
+            ]"
             :state="errors?.condition ? false : null"
-          />
-        </b-form-group>
-        <b-form-group
-          label="Manfaat:"
-          label-for="benefit"
-          :invalid-feedback="errors?.benefit"
-        >
-          <b-form-input
-            id="benefit"
-            type="number"
-            v-model="form.benefit"
-            placeholder="Manfaat"
-            :state="errors?.benefit ? false : null"
           />
         </b-form-group>
       </div>
@@ -98,8 +90,7 @@ export default {
         name: '',
         age: 0,
         price: 0,
-        condition: 0,
-        benefit: 0,
+        condition: '',
       },
     }
   },
@@ -113,11 +104,9 @@ export default {
         this.$bvModal.hide('modal-create-mask')
         this.form = {
           name: '',
-          owner: '',
           age: 0,
           price: 0,
-          condition: 0,
-          benefit: 0,
+          condition: '',
         }
         this.$bvToast.toast(`Berhasil membuat masker baru.`, {
           variant: 'success',

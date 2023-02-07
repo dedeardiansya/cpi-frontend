@@ -11,40 +11,33 @@
             <th colspan="4">Nilai bobot</th>
           </tr>
           <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
             <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th>Umur</th>
-            <td>13 - 17</td>
-            <td>17 - 23</td>
-            <td>23 - 28</td>
-            <td>>28</td>
+            <td>13 - 18</td>
+            <td>19></td>
+            <td>-</td>
+            <td>-</td>
           </tr>
           <tr>
             <th>Harga</th>
-            <td>{{ '<' }}Rp.15000</td>
-            <td>Rp.16000 - Rp.25000</td>
-            <td>Rp.26000 - Rp.40000</td>
-            <td>>Rp.41000</td>
+            <td>>Rp.35,000</td>
+            <td>Rp.25,000 - Rp.35,000</td>
+            <td>Rp.15,000 - Rp.25,000</td>
+            <td>{{ '<' }}Rp.15,000</td>
           </tr>
           <tr>
             <th>Kondisi kulit</th>
-            <td>kering</td>
-            <td>kemerahan</td>
             <td>iritasi</td>
+            <td>kemerahan</td>
+            <td>kering</td>
             <td>kencang dan gatal</td>
-          </tr>
-          <tr>
-            <th>Manfaat</th>
-            <td>melembabkan kulit wajah kencang dan gatal</td>
-            <td>menghidrasi kulit wajah kering</td>
-            <td>menormalkan kadar minyak di wajah</td>
-            <td>menenangkan kulit wajah iritasi</td>
           </tr>
         </tbody>
       </table>

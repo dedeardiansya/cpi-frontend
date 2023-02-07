@@ -25,7 +25,6 @@
               { value: 'age', text: 'Bobot 1' },
               { value: 'price', text: 'Bobot 2' },
               { value: 'condition', text: 'Bobot 3' },
-              { value: 'benefit', text: 'Bobot 4' },
             ]"
             :state="errors?.target ? false : null"
           />

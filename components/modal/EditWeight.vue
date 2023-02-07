@@ -101,8 +101,6 @@ export default {
           return 'Bobot 2'
         case 'condition':
           return 'Bobot 3'
-        case 'benefit':
-          return 'Bobot 4'
         default:
           return ''
       }

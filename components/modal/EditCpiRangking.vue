@@ -33,15 +33,11 @@
           label-for="age"
           :invalid-feedback="errors?.age"
         >
-          <b-form-select
+          <b-form-input
             id="age"
+            type="number"
             v-model="form.age"
-            :options="[
-              { value: 4, text: '13-17' },
-              { value: 5, text: '17-23' },
-              { value: 6, text: '23-28' },
-              { value: 7, text: '>28' },
-            ]"
+            placeholder="Umur"
             :state="errors?.age ? false : null"
           />
         </b-form-group>
@@ -50,16 +46,12 @@
           label-for="price"
           :invalid-feedback="errors?.price"
         >
-          <b-form-select
+          <b-form-input
             id="price"
+            type="number"
             v-model="form.price"
-            :options="[
-              { value: 4, text: '<Rp.15000' },
-              { value: 5, text: 'Rp.16000-Rp.25000' },
-              { value: 6, text: ' Rp.26000-Rp.40000' },
-              { value: 7, text: '>Rp.41000' },
-            ]"
-            :state="errors?.age ? false : null"
+            placeholder="Harga"
+            :state="errors?.price ? false : null"
           />
         </b-form-group>
         <b-form-group
@@ -67,33 +59,17 @@
           label-for="condition"
           :invalid-feedback="errors?.condition"
         >
-          <b-form-select
+          <b-select
             id="condition"
             v-model="form.condition"
             :options="[
-              { value: 4, text: 'kering' },
-              { value: 5, text: 'kemerahan' },
-              { value: 6, text: 'iritasi' },
-              { value: 7, text: 'kencang dan gatal' },
+              { value: '', text: 'Kondisi kulit', disabled: true },
+              'iritasi',
+              'kemerahan',
+              'kering',
+              'kencang dan gatal',
             ]"
             :state="errors?.condition ? false : null"
-          />
-        </b-form-group>
-        <b-form-group
-          label="Manfaat:"
-          label-for="benefit"
-          :invalid-feedback="errors?.benefit"
-        >
-          <b-form-select
-            id="benefit"
-            v-model="form.benefit"
-            :options="[
-              { value: 4, text: 'melembabkan kulit wajah kencang dan gatal' },
-              { value: 5, text: 'menghidrasi kulit wajah kering' },
-              { value: 6, text: 'menormalkan kadar minyak di wajah' },
-              { value: 7, text: 'menenangkan kulit wajah iritasi' },
-            ]"
-            :state="errors?.benefit ? false : null"
           />
         </b-form-group>
       </div>
@@ -129,8 +105,7 @@ export default {
         consumerId: null,
         age: 0,
         price: 0,
-        condition: 0,
-        benefit: 0,
+        condition: '',
       },
     }
   },
@@ -143,8 +118,7 @@ export default {
     this.form.consumerId = this.index.consumerId || null
     this.form.age = this.index.age || 0
     this.form.price = this.index.price || 0
-    this.form.condition = this.index.condition || 0
-    this.form.benefit = this.index.benefit || 0
+    this.form.condition = this.index.condition || ''
   },
   methods: {
     async submit() {
@@ -162,7 +136,6 @@ export default {
           age: index.age,
           price: index.price,
           condition: index.condition,
-          benefit: index.benefit,
         }
         this.$bvToast.toast(`Berhasil memperbarui data CPI.`, {
           variant: 'success',

@@ -39,6 +39,7 @@ export default {
     { src: '~/plugins/errorResponse.js', ssr: true },
     { src: '~/plugins/Axios.js', ssr: true },
     { src: '~/plugins/Sweetalert.js', ssr: false },
+    { src: '~/plugins/criteriaHelper.js', ssr: true },
   ],
 
   components: true,

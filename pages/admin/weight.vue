@@ -63,8 +63,6 @@ export default {
           return 'Harga'
         case 'condition':
           return 'Kondisi Kulit'
-        case 'benefit':
-          return 'Manfaat'
         default:
           return ''
       }
