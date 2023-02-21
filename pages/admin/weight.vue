@@ -51,7 +51,9 @@ export default {
   async asyncData({ $axios }) {
     const weight = await $axios.$get('/weight')
     return {
-      weight,
+      weight: weight.sort((a,b) => {
+        return a.value - b.value
+      }).reverse(),
     }
   },
   methods: {
