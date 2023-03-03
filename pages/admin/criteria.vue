@@ -20,8 +20,8 @@
         <tbody>
           <tr>
             <th>Umur</th>
-            <td>13 - 19</td>
-            <td>19{{'<'}}</td>
+            <td>13 - 18</td>
+            <td>18{{'<'}}</td>
             <td>-</td>
             <td>-</td>
           </tr>
