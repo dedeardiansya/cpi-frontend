@@ -28,7 +28,7 @@ export default function (ctx, inject) {
       case 'kering':
         return 'menghidrasi kulit wajah kering'
       case 'kencang dan gatal':
-        return 'melembabkan kukit kencang dan gatal'
+        return 'melembabkan kulit kencang dan gatal'
     }
   })
 }
