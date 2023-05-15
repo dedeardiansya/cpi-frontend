@@ -3,7 +3,7 @@ export default {
   target: 'static',
 
   publicRuntimeConfig: {
-    baseApiUrl: process.env.BASE_API_URL || 'http://203.175.11.246:4000',
+    baseApiUrl: process.env.BASE_API_URL || 'https://api.cirsqu.cloud',
     baseUrl: process.env.BASE_URL || 'https://rek-masker.netlify.app',
   },
 
@@ -60,7 +60,7 @@ export default {
   },
 
   axios: {
-    baseURL: process.env.BASE_API_URL || 'http://203.175.11.246:4000',
+    baseURL: process.env.BASE_API_URL || 'https://api.cirsqu.cloud',
   },
 
   build: {},
