@@ -60,7 +60,7 @@ export default {
   },
 
   axios: {
-    baseURL: process.env.BASE_API_URL || 'https://cpi.dedeard.my.id',
+    baseURL: process.env.BASE_API_URL || 'http://203.175.11.246:4000',
   },
 
   build: {},
