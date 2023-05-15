@@ -3,7 +3,7 @@ export default {
   target: 'static',
 
   publicRuntimeConfig: {
-    baseApiUrl: process.env.BASE_API_URL || 'https://cpi.dedeard.my.id',
+    baseApiUrl: process.env.BASE_API_URL || 'http://203.175.11.246:4000',
     baseUrl: process.env.BASE_URL || 'https://rek-masker.netlify.app',
   },
 
